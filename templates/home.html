@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1>Welcome to Flask{% if user %}, {{user.username}}!{% endif %}</h1>
+            <p class="lead">This application is built on Python Flask framework following "Python Flask from Scratch by TravesyMedia</p>
+        </div>
+    </div>
+{% endblock %}

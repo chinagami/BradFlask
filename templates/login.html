@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>Sign In</h1>
+        <form action="" method="POST" novalidate class="form-signin">
+            {{form.hidden_tag()}}
+            <div class="form-group">
+                {{render_field(form.username, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.password, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{form.remember_me}}
+                {{form.remember_me.label}}
+            </div>
+            <p>{{form.submit(class_="btn btn-primary")}}</p>
+        </form>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}Post {{article[id].id}}{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>{{article[id].title}}</h1>
+    <small>By: {{article[id].author}} Created: {{article[id].create_date}}</small>
+    <hr>
+    <p>{{article[id].body}}</p>
+
+{% endblock %}
