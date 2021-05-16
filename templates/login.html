@@ -5,8 +5,8 @@
 
 {% block body %}
     <br>
-    <h1>Sign In</h1>
-        <form action="" method="POST" novalidate class="form-signin">
+    <form style="margin: auto;max-width: 330px;" action="" method="POST" novalidate >
+        <h1>Sign In</h1>
             {{form.hidden_tag()}}
             <div class="form-group">
                 {{render_field(form.username, class_="form-control")}}
@@ -19,6 +19,6 @@
                 {{form.remember_me.label}}
             </div>
             <p>{{form.submit(class_="btn btn-primary")}}</p>
-        </form>
+    </form>
 
 {% endblock %}
