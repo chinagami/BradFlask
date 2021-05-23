@@ -9,11 +9,18 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
                 <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
                 <li><a class="nav-link" href="{{ url_for('articles.articles') }}">Articles</a></li>
                 <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul> 
+            <ul class="navbar-nav navbar-right">
+                {% if current_user.is_anonymous %}
+                <li><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                <li><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+                {% else %}
+                <li><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
         </div>
     </div>
 </nav>

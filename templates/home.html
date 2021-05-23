@@ -4,9 +4,12 @@
 
 {% block body %}
     <div class="jumbotron text-center">
-        <div class="container">
-            <h1>Welcome to Flask{% if user %}, {{user.username}}!{% endif %}</h1>
-            <p class="lead">This application is built on Python Flask framework following "Python Flask from Scratch by TravesyMedia</p>
-        </div>
+        <h1>Welcome to Flask{% if not current_user.is_anonymous %}, {{current_user.username}}!{% endif %}</h1>
+        <p class="lead">This application is built on Python Flask framework following "Python Flask from Scratch by TravesyMedia
+            <br>and Miguel Grinberg's Flask Mega Tutorial</p>
+        {% if current_user.is_anonymous %}
+        <a class="btn btn-lg btn-success" href="{{url_for('login')}}">Login</a>
+        <a class="btn btn-lg btn-success" href="{{url_for('register')}}">Register</a>
+        {% endif %}
     </div>
 {% endblock %}
