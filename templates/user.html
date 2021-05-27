@@ -4,9 +4,21 @@
 
 {% block body %}
     <br>
-    <h1>User: {{user.username}}</h1>
+    <table>
+        <tr valign="top">
+            <td><img src="{{user.avatar(128)}}" alt="Avatar"></td>
+            <td>
+                <h1>{{user.username}}</h1>
+                About me:{% if user.about_me %} {{user.about_me}}{% endif %}<br>
+                {% if user.last_seen %} Last seen on: {{user.last_seen}}<br>{% endif %}
+                {% if user == current_user %}
+                <a href="{{url_for('edit_profile')}}">Edit profile</a>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
     <hr>
     {% for post in posts %}
-    <p>{{post.author.username}}: {{post.body}}</p>
+        {% include 'includes/_post.html' %}
     {% endfor %}
 {% endblock %}
