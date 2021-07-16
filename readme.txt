@@ -1,4 +1,4 @@
-Website to post and view articles from community.
+Website to post and view articles from other users.
 
 Following "Python Flask From Scratch" tutorial from Traversy Media:
 https://www.youtube.com/watch?v=zRwy8gtgJ1A
