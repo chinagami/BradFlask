@@ -1,3 +1,5 @@
+Website to post and view articles from community.
+
 Following "Python Flask From Scratch" tutorial from Traversy Media:
 https://www.youtube.com/watch?v=zRwy8gtgJ1A
 
